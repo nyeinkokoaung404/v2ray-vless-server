@@ -1,0 +1,34 @@
+{
+  "inbounds": [
+    {
+      "port": 443,
+      "protocol": "vless",
+      "settings": {
+        "clients": [
+          {
+            "id": "7e5834f5-22c2-472b-bf27-e0e86de9ca87",  // UUID ထည့်ပါ။
+            "flow": "xtls-rprx-direct"
+          }
+        ],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "xtls",
+        "xtlsSettings": {
+          "certificates": [
+            {
+              "certificateFile": "/etc/v2ray/fullchain.pem",  // Diploi က SSL ကိုအလိုအလျောက်ထည့်ပေးနိုင်ပါတယ်
+              "keyFile": "/etc/v2ray/private.key"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom"
+    }
+  ]
+}
